@@ -4,7 +4,9 @@ const cors = require('cors');
 const pool = require('./db');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: ['https://da-wheel.vercel.app', 'http://localhost:5173']
+}));
 app.use(express.json());
 
 // GET /themes — returns all themes with count + is_full + max_count
