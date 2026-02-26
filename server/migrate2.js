@@ -15,9 +15,9 @@ async function migrate2() {
 
         // 2. Set FinTech quota to 3
         await client.query(`
-      UPDATE theme_quotas SET max_count = 3 WHERE theme_name = 'FinTech'
+      UPDATE theme_quotas SET max_count = 2 WHERE theme_name = 'FinTech'
     `);
-        console.log('✓ FinTech max_count set to 3.');
+        console.log('✓ FinTech max_count set to 2.');
 
         // 3. Re-sync is_full based on new max_count for all themes
         await client.query(`
